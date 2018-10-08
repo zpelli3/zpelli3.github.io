@@ -39,7 +39,10 @@
 
     $elem.attr({'aria-multiselectable': !this.options.autoCollapse}); // define if more than one panel can be expanded
 
-		this.headers = $elem.children('dt').each(function(i, el) {
+    this.headers = $elem.children('dt')
+         .attr({'role': 'heading'}); // set heading role for each accordion header
+
+    this.headers = $elem.children('dt').each(function(i, el) {
 			var $me, $btn;
 
 			$me = $(el);
