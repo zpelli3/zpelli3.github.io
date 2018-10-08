@@ -78,6 +78,14 @@
 				.on('mouseup', {'plugin': plugin}, plugin.onMouseUp)
 				.on('mouseleave', function(){ setTimeout(plugin.onMouseUp, 100, { 'data': {'plugin': plugin} }) });
 
+				$('<div/>') // add slider track
+					.addClass('ik_track')
+					.append(this.fill, this.knob)
+					.prependTo(this.element);
+
+				this.setValue(plugin.options.minValue); // update current value
+
+
 				$('<div/>') // add instructions for screen reader users
 		    .attr({
 		    'id': id + '_instructions'
@@ -86,12 +94,6 @@
 		    .addClass('ik_readersonly')
 		    .appendTo(this.element);
 
-			$('<div/>') // add slider track
-				.addClass('ik_track')
-				.append(this.fill, this.knob)
-				.prependTo(this.element);
-
-			this.setValue(plugin.options.minValue); // update current value
 
 		}
 
