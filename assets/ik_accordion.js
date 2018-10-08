@@ -33,7 +33,8 @@
 		plugin = this;
 
 		$elem.attr({
-			'id': id
+			'id': id,
+      'role': 'region' // add the accordion to the landmarked regions
 		}).addClass('ik_accordion');
 
 		this.headers = $elem.children('dt').each(function(i, el) {
