@@ -6,6 +6,7 @@
 			animationSpeed: 200
 		};
 
+    $elem.attr({'aria-multiselectable': !this.options.autoCollapse}); // define if more than one panel can be expanded
 	/**
 	 * @constructs Plugin
 	 * @param {Object} element - Current DOM element from selected collection.
