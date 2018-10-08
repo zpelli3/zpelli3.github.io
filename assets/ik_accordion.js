@@ -6,7 +6,6 @@
 			animationSpeed: 200
 		};
 
-    $elem.attr({'aria-multiselectable': !this.options.autoCollapse}); // define if more than one panel can be expanded
 	/**
 	 * @constructs Plugin
 	 * @param {Object} element - Current DOM element from selected collection.
@@ -37,6 +36,8 @@
 			'id': id,
       'role': 'region' // add the accordion to the landmarked regions
 		}).addClass('ik_accordion');
+
+    $elem.attr({'aria-multiselectable': !this.options.autoCollapse}); // define if more than one panel can be expanded
 
 		this.headers = $elem.children('dt').each(function(i, el) {
 			var $me, $btn;
