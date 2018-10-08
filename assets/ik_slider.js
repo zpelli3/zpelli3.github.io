@@ -83,19 +83,19 @@
 				.append(this.fill, this.knob)
 				.prependTo(this.element);
 
-				$('<div/>') // add instructions for screen reader users
-		    .attr({
-		    'id': id + '_instructions'
-		    })
-		    .text(this.options.instructions)
-		    .addClass('ik_readersonly')
-		    .appendTo(this.element);
-
 			this.setValue(plugin.options.minValue); // update current value
 
 		}
 
 	};
+
+	$('<div/>') // add instructions for screen reader users
+	.attr({
+	'id': id + '_instructions'
+	})
+	.text(this.options.instructions)
+	.addClass('ik_readersonly')
+	.appendTo(this.element);
 
 	/**
 	 * Sets current value.
