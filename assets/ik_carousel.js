@@ -192,15 +192,13 @@
 			next = event.data.next;
 			dir = event.data.dir;
 
-			active
-			.attr({
+			active.attr({
 	        'aria-hidden': 'true'
 	    })
 			.off( ik_utils.getTransitionEventName() )
 				.removeClass(direction + ' active');
 
-			next
-			.attr({
+			next.attr({
         'aria-hidden': 'false'
 	    })
 			.removeClass('next')
