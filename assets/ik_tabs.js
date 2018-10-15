@@ -61,7 +61,7 @@
 				$tab = $('<li/>').attr({
 					'id': id + '_tab' + i, // create unique id for a tab
 					'role': 'tab', // assign tab role
-    			'aria-controls': 'panel' + i // define which panel it controls
+    			'aria-controls': id + 'panel' + i // define which panel it controls
 				})
 				.text(lbl > '' ? lbl : 'Tab ' + (i + 1))
 				.on('keydown', {'plugin': plugin, 'index': i}, plugin.onKeyDown) // add keyboard event handler
