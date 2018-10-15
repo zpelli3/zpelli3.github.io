@@ -113,7 +113,8 @@
         tabindex: 0
     	});
 
-		if (event.type) $($tabs[ind]).focus(); // move focus to current tab if reached by mouse or keyboard
+	//	if (event.type) $($tabs[ind]).focus(); // move focus to current tab if reached by mouse or keyboard
+	$($tabs[ind]).focus(); 
 
 		$panels // hide all panels
 			.attr({
@@ -129,41 +130,7 @@
 
 	}
 
-	/**
-* Handles keydown event on header button.
-*
-* @param {Object} event - Keyboard event.
-* @param {object} event.data - Event data.
-* @param {object} event.data.plugin - Reference to plugin.
-*/
-Plugin.prototype.onKeyDown = function (event) {
-    var plugin = event.data.plugin,
-        ind = event.data.index,
-        $tabs,
-        $panels,
-        next;
 
-    $elem = plugin.element;
-    $tabs = plugin.tabs;
-    $panels = plugin.panels;
-
-    switch (event.keyCode) {
-        case ik_utils.keys.left:
-        case ik_utils.keys.up:
-            next = ind > 0 ? --ind : 0;
-            plugin.selectTab({data:{'plugin': plugin, 'index': next}});
-            break;
-        case ik_utils.keys.right:
-        case ik_utils.keys.down:
-            next = ind < $tabs.length - 1 ? ++ind : $tabs.length - 1;
-            plugin.selectTab({data:{'plugin': plugin, 'index': next}});
-            break;
-        case ik_utils.keys.space:
-            event.preventDefault();
-            event.stopPropagation();
-            return false;
-    }
-}
 
 	$.fn[pluginName] = function ( options ) {
 
