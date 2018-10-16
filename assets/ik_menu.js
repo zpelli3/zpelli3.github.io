@@ -31,15 +31,15 @@
 
 		$elem.addClass('ik_menu')
 			.attr({
-				'id': id,
-        'aria-hidden': 'true'  // hide element from screen readers to prevent it from being read twice
+				'id': id
 			});
 
 		$('<div/>') // add div element to be used with aria-described attribute of the menu
 			.text(plugin.options.instructions) // get instruction text from plugin options
 			.addClass('ik_readersonly') // hide element from visual display
 			.attr({
-				'id': id + '_instructions'
+				'id': id + '_instructions',
+        'aria-hidden': 'true'  // hide element from screen readers to prevent it from being read twice
 			})
 			.appendTo(this.element);
 
